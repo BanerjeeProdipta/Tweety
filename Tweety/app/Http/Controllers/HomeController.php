@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Tweet;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tweets= auth()->user()->timeline();
+        return view('home', compact('tweets'));
     }
 }

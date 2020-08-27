@@ -6,13 +6,14 @@
             name="body"
             class="w-full"
             placeholder="What's up doc?"
+            required
         ></textarea>
 
         <hr class="my-4">
 
         <footer class="flex justify-between">
             <img
-                src="https://i.pravatar.cc/40"
+                src="{{auth()->user()->avatar}}"
                 alt=""
                 class="rounded-full mr-2"
             >
@@ -27,6 +28,8 @@
     </form>
 
     @error('body')
-        <p class="text-red-500 text-sm mt-2">Tweet-a-roo</p>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
     @enderror
 </div>
