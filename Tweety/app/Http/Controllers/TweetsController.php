@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Tweet;
+use App\User;
 
 class TweetsController extends Controller
 {
