@@ -19,6 +19,6 @@ class TweetsController extends Controller
         ]);
         auth()->user()->tweets()->create($validated);
 
-        return redirect('/home');
+        return redirect('/tweets');
     }
 }
