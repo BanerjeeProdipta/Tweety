@@ -11,7 +11,7 @@
                         class="rounded-full mr-2"
                     >
 
-                    <
+                    {{$user->name}}
                 </div>
             </li>
         @endforeach
