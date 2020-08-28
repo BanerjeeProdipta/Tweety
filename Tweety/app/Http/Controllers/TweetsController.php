@@ -6,6 +6,12 @@ use App\User;
 
 class TweetsController extends Controller
 {
+    public function index()
+    {
+        $tweets= auth()->user()->timeline();
+        return view('tweets.index', compact('tweets'));
+    }
+
     public function store()
     {
         $validated = request()->validate([
