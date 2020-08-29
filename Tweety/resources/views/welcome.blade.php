@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/home">Home</a>
+                    <a href= "{{ url('/tweets') }}">Home</a>
                
                 </div>
             </div>

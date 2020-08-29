@@ -8,7 +8,7 @@ class TweetsController extends Controller
 {
     public function index()
     {
-        $tweets= auth()->user()->timeline();
+        $tweets = auth()->user()->timeline();
         return view('tweets.index', compact('tweets'));
     }
 

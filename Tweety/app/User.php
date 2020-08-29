@@ -59,4 +59,9 @@ class User extends Authenticatable
         return "https://i.pravatar.cc/40?u=.$this->email";
     }
 
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
 }
