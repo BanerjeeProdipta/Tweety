@@ -18,7 +18,6 @@ class TweetsController extends Controller
             'body' => 'required|max:255'
         ]);
         auth()->user()->tweets()->create($validated);
-
         return redirect('/tweets');
     }
 }

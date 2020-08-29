@@ -14,7 +14,7 @@ class FollowsController extends Controller
         // else{
         //     auth()->user()->follow($user);
         // }
-        auth()->user()->toggleFollow($user->name);
+        auth()->user()->toggleFollow($user);
         return back();
     }
 }

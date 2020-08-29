@@ -18,9 +18,9 @@ trait Followable
         if( $this->following($user) ){
             return $this->unfollow($user);
         }
-        else{
-            return $this->follow($user);
-        }
+        
+        return $this->follow($user);
+        
     }
 
     // check if the user is following other user

@@ -1,15 +1,24 @@
 <x-app>
     <header class="mb-6 relative">
-        <img
-        src="/images/header.jpg"
-        alt=""
-        class="mb-4"
-        style="
-            width:100%; 
-            height:100%; 
-            object-fit:cover; 
-            border-radius:1.25rem"
-        >
+        <div class="relative">
+            <img
+            src="/images/header.jpg"
+            alt=""
+            class="mb-4"
+            style="
+                width:100%; 
+                height:100%; 
+                object-fit:cover; 
+                border-radius:1.25rem"
+            >
+            <img
+                src="{{ $user->avatar }}"
+                alt=""
+                class="rounded-full absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" 
+                style="left:50%"
+                {{-- style="width:150px; left: 40%; top:55% " --}}
+            >
+        </div>
         <div class="flex justify-between items-center">
             <div>
                 <h2 class="font-bold text-2xl mb-2">{{ $user->name }}</h2>
@@ -38,13 +47,8 @@
                 </form>
             </div>
         </div>
-        <img
-            src="{{ $user->avatar }}"
-            alt=""
-            class="rounded-full absolute"
-            style="width:150px; left: 40%; top:55% "
-        >
-        <p class="text-sm mt-3">Let's move on and implement a profile page for each user. This page should show their avatar, a short bio, and then a timeline their tweets. This lesson will give us the chance to flex our Tailwind chops!</p>
+        
+        <p class="text-sm mt-6">Let's move on and implement a profile page for each user. This page should show their avatar, a short bio, and then a timeline their tweets. This lesson will give us the chance to flex our Tailwind chops!</p>
     </header>
     @include('_timeline', [
         'tweets' => $user->tweets
