@@ -51,10 +51,4 @@ class User extends Authenticatable
         return "https://i.pravatar.cc/200?u=.$this->email";
     }
 
-    // // user friendly in url for older version of laravel
-    // public function getRouteKeyName()
-    // {
-    //     return 'name';
-    // }
-
 }
