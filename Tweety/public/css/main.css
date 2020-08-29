@@ -9376,7 +9376,7 @@ video {
 }
 
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
 }
 
 .rounded-full {
@@ -31024,7 +31024,7 @@ video {
   }
 
   .sm\:rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
   }
 
   .sm\:rounded-full {
@@ -52607,7 +52607,7 @@ video {
   }
 
   .md\:rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 1.5rem
   }
 
   .md\:rounded-full {
@@ -74190,7 +74190,7 @@ video {
   }
 
   .lg\:rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
   }
 
   .lg\:rounded-full {
@@ -95773,7 +95773,7 @@ video {
   }
 
   .xl\:rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
   }
 
   .xl\:rounded-full {
