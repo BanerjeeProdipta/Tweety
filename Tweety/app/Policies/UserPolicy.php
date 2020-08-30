@@ -9,13 +9,13 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    public function edit(User $user)
+    public function update(User $user, User $model)
     {
-        // return auth()->user()->is($user);
-        dd($user);
+        return auth()->user()->is($model);
     }
-    public function follow(User $user)
+    public function follow(User $user, User $model)
     {
-        return auth()->user()->isNot($user);
+        return auth()->user()->isNot($model);
     }
+
 }
