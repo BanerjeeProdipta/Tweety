@@ -6,7 +6,7 @@ trait Followable
 {
     //follow a user
     public function follow(User $user){
-        return $this->follows()->save($user);
+        return $this->follows()->attach($user);
     }
 
     //follow a user
@@ -18,9 +18,7 @@ trait Followable
         if( $this->following($user) ){
             return $this->unfollow($user);
         }
-        
-        return $this->follow($user);
-        
+        return $this->follow($user);  
     }
 
     // check if the user is following other user

@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class ProfilesController extends Controller
 {
     public function show(User $user){
-        $tweets= auth()->user()->timeline();
-        return view('profiles.show', compact('user', 'tweets'));
+        return view('profiles.show', compact('user'));
+    }
+    public function edit(User $user){
+        return view('profiles.edit', compact('user'));
     }
 }

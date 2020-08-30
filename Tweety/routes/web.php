@@ -17,11 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::middleware('auth')->group( function() {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store');
     Route::post('/profile/{user:name}/follow', 'FollowsController@store');
+    Route::get('/profile/{user:name}/edit', 'ProfilesController@edit');
+
 });
 
 Route::get('/profile/{user:name}', 'ProfilesController@show')->name('profile');

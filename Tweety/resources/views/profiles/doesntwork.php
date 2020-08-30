@@ -16,7 +16,6 @@
                 alt=""
                 class="rounded-full absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" 
                 style="left:50%"
-                {{-- style="width:150px; left: 40%; top:55% " --}}
             >
         </div>
         <div class="flex justify-between items-center">
@@ -25,17 +24,20 @@
                 <p class="text sm">Joined {{ $user->created_at->diffForHumans() }}</p>
             </div>
             <div class="flex">
-                @if(auth()->user()->is($user))
+                
+                @can('edit', $user)
                     <a href="/profile/{{$user->name}}/edit" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
-                @endif
-                @if(auth()->user()->isNot($user))
+                @endcan
+
+                @can('follow', $user)
                     <form method="POST" action="/profile/{{$user->name}}/follow">
                         @csrf
                         <button class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">
                             {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow Me' }}
                         </button>
                     </form>
-                @endif
+                @endcan
+
             </div>
         </div>
         
