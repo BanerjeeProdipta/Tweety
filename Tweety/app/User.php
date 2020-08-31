@@ -54,11 +54,11 @@ class User extends Authenticatable
         // return "{{ asset($value) }}";
     }
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'name';
-    // }
-
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+    
     public function path(){
         return route('profile', $this->username);
     }
