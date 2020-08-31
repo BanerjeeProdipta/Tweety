@@ -22,6 +22,7 @@ Route::middleware('auth')->group( function() {
     Route::post('/tweets', 'TweetsController@store');
     Route::post('/profile/{user:username}/follow', 'FollowsController@store');
     Route::get('/profile/{user:username}/edit', 'ProfilesController@edit');
+    Route::patch('/profile/{user:username}', 'ProfilesController@update');
 
 });
 

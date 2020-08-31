@@ -21,7 +21,7 @@
 
             <button
                 type="submit"
-                class="bg-blue-500 rounded-lg shadow px-8 text-white"
+                class="bg-blue-400 text-white rounded-lg py-2 px-4 hover:bg-blue-500"
             >
                 Publish
             </button>
