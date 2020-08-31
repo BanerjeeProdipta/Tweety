@@ -14,12 +14,9 @@
             <img
                 src="{{ $user->avatar }}"
                 alt=""
-                class="rounded-full absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" 
-                style="left:50% "
-                width="150px"
-                height="150px"
-                
-            >
+                class="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" 
+                style="object-fit:cover; border-radius:50%; width:150px; height:150px; left:50%"
+            >   
         </div>
         <div class="flex justify-between items-center">
             <div>

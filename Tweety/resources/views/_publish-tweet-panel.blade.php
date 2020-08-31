@@ -15,8 +15,8 @@
             <img
                 src="{{auth()->user()->avatar}}"
                 alt=""
-                class="rounded-full mr-2"
-                style="width: 50px; heignt:50px"
+                class="mr-2"
+                style="object-fit:cover; border-radius:50%; width:50px; height:50px;"
             >
 
             <button
