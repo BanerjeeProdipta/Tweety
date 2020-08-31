@@ -26,11 +26,11 @@
             <div class="flex">
                 
                 @can('update', $user)
-                    <a href="/profile/{{$user->name}}/edit" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
+                    <a href="/profile/{{$user->username}}/edit" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
                 @endcan
 
                 @can('follow', $user)
-                    <form method="POST" action="/profile/{{$user->name}}/follow">
+                    <form method="POST" action="/profile/{{$user->username}}/follow">
                         @csrf
                         <button class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">
                             {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow Me' }}
