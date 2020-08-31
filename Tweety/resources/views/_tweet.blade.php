@@ -18,6 +18,5 @@
         <p class="text-sm">
             {{ $tweet->body }}
         </p>
-
     </div>
 </div>
