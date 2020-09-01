@@ -1,7 +1,7 @@
 <x-master>
     <div class="container mx-auto md:w-1/3">
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-           <div class="card-header text-xl font-bold mb-4">{{ __('Register') }}</div>
+            <div class="card-header text-xl font-bold mb-4">{{ __('Register') }}</div>
             <div class="card-body">
                 <form method="POST" action="{{ route('register') }}">
                     <hr class="mb-4">

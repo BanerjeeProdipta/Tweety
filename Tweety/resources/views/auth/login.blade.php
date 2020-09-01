@@ -1,6 +1,6 @@
 <x-master>
     <div class="container mx-auto md:w-1/3">
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 transform -translate-x-12%">
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="card-header text-xl font-bold mb-4">{{ __('Login') }}</div>
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
@@ -52,12 +52,9 @@
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4">
                                 {{ __('Login') }}
                             </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link mt-4 float-right" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
+                            <a class="btn btn-link mt-4 float-right" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
                         </div>
                     </div>
                 </form>

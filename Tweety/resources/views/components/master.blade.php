@@ -31,19 +31,10 @@
                         >
                     </h1>
                     <div>
-                        @auth
-                            <a class="font-bold" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                       @else
+                        @guest
                             <a href="{{ route('login') }}" class="{{ Request::path() == '/login' ? 'text-gray-400 font-semibold' : 'font-bold' }} mr-3 ">Login</a>    
                             <a href="{{ route('register') }}"class="{{ Request::path() == '/register' ? 'text-gray-400 font-semibold' : 'font-bold' }}">Register</a>
-                        @endauth
+                        @endguest
                     </div>
                 </div>
             </header>

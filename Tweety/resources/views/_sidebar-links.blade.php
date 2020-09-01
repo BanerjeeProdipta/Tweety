@@ -28,7 +28,19 @@
             href="{{ route('profile', auth()->user() ) }} "
         >Profile</a></li>
     <li><a
-            class="font-bold text-lg block"
+            class="font-bold text-lg mb-4 block"
             href="#"
         >More</a></li>
+    <li>
+        <a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button
+                class="font-bold text-lg mb-4 block" 
+                href="{{ route('logout') }}"
+                >Logout</button>
+            </form>
+        </a>
+    </li>
 </ul>
+
