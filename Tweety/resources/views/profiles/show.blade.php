@@ -23,6 +23,8 @@
                 <h2 class="font-bold text-2xl mb-2">{{ $user->name }}</h2>
                 <p class="text sm">Joined {{ $user->created_at->diffForHumans() }}</p>
             </div>
+
+            {{-- Buttons --}}
             <div class="flex">
                 
                 @can('update', $user)

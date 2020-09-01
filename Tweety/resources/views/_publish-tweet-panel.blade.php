@@ -5,7 +5,7 @@
         <textarea
             name="body"
             class="w-full"
-            placeholder="What's up doc?"
+            placeholder="Post your tweet!"
             required
         ></textarea>
 
@@ -21,7 +21,7 @@
 
             <button
                 type="submit"
-                class="bg-blue-400 text-white rounded-lg py-2 px-4 hover:bg-blue-500"
+                class="bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500"
             >
                 Publish
             </button>

@@ -24,7 +24,6 @@ trait Followable
 
     // check if the user is following other user
     public function following(User $user){
-        // return $this->follows->contains($user);
         return $this->follows()
             ->where('following_user_id', $user->id)
             ->exists();
