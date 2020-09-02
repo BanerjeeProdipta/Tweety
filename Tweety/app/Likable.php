@@ -32,10 +32,6 @@ trait Likable
             ->count();
     }
 
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
 
     public function like($user = null, $liked = true)
     {
