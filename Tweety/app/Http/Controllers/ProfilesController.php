@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 class ProfilesController extends Controller
 {
     public function show(User $user){
-        $tweets = auth()->user()->tweets;
+        $tweets = auth()->user()->owntimeline();
         return view('profiles.show', compact('user', 'tweets'));
     }
     public function edit(User $user){

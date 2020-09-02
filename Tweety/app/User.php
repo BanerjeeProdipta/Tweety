@@ -54,13 +54,21 @@ class User extends Authenticatable
             ->orderByDesc('id')
             ->paginate(50);
     }
+
+    public function owntimeline()
+    {
+        return Tweet::where('user_id', $this->id)
+            ->latest()
+            ->withLikes()
+            ->orderByDesc('id')
+            ->paginate(50);
+    }
     
     public function likes()
     {
         return $this->hasMany(Like::class);
     }
-
-
+    
     public function getAvatarAttribute($value){
         return asset($value ? 'storage/'.$value : 'images/default-avatar.jpeg');    
     }

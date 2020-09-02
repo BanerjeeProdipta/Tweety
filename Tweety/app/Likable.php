@@ -16,7 +16,6 @@ trait Likable
         );
     }
 
-
     public function isLikedBy(User $user)
     {
         return (bool) $user->likes
@@ -42,6 +41,7 @@ trait Likable
     {
         $this->likes()->updateOrCreate(
             [
+
                 'user_id' => $user ? $user->id : auth()->id(),
             ],
             [
