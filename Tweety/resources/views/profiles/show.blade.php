@@ -45,7 +45,5 @@
         
         <p class="text-sm mt-6">Let's move on and implement a profile page for each user. This page should show their avatar, a short bio, and then a timeline their tweets. This lesson will give us the chance to flex our Tailwind chops!</p>
     </header>
-    @include('_timeline', [
-        'tweets' => $user->tweets
-    ])
+    @include('_timeline')
 </x-app>

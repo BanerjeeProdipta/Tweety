@@ -18,6 +18,8 @@
         <p class="text-sm">
             {{ $tweet->body }}
         </p>
-
+        @auth
+            <x-like-buttons :tweet="$tweet" />
+        @endauth
     </div>
 </div>

@@ -11,7 +11,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="http://unpkg.com/turbolinks"></script> 
 
 
     <!-- Fonts -->
@@ -42,11 +41,8 @@
                 </div>
             </header>
         </section>
-
         {{ $slot }}
-        
     </div>
-    <body>
-            
+    <script src="http://unpkg.com/turbolinks"></script> 
 </body>
 </html>
