@@ -33,22 +33,26 @@ trait Likable
     }
 
 
-    public function like($user = null, $liked = true)
+    public function like($user, $liked)
     {
         $this->likes()->updateOrCreate(
             [
-
-                'user_id' => $user ? $user->id : auth()->id(),
+                'user_id' => $user->id,
             ],
             [
                 'liked' => $liked,
             ]
         );
     }
+    public function liked($user)
+    {
+        return $this->like($user, true);
+    }
 
-    public function dislike($user = null)
+    public function disliked($user)
     {
         return $this->like($user, false);
     }
+    
     
 }

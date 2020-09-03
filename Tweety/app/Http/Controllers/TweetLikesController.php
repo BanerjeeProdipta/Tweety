@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 
 class TweetLikesController extends Controller
 {
-    public function store(Tweet $tweet)
+    public function like(Tweet $tweet)
     {
-        $tweet->like(auth()->user());
+        $tweet->liked(auth()->user());
 
         return back();
     }
 
-    public function destroy(Tweet $tweet)
+    public function dislike(Tweet $tweet)
     {
-        $tweet->dislike(auth()->user());
+        $tweet->disliked(auth()->user());
 
         return back();
     }    
