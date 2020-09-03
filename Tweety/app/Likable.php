@@ -33,7 +33,7 @@ trait Likable
     }
 
 
-    public function like($user, $liked)
+    public function setReaction($user, $liked)
     {
         $this->likes()->updateOrCreate(
             [
@@ -46,12 +46,12 @@ trait Likable
     }
     public function liked($user)
     {
-        return $this->like($user, true);
+        return $this->setReaction($user, true);
     }
 
     public function disliked($user)
     {
-        return $this->like($user, false);
+        return $this->setReaction($user, false);
     }
     
     
