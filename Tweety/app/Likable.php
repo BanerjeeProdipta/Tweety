@@ -32,7 +32,6 @@ trait Likable
             ->count();
     }
 
-
     public function setReaction($user, $liked)
     {
         $this->likes()->updateOrCreate(
@@ -48,15 +47,25 @@ trait Likable
     public function cancleReaction(){
         $this->likes()->delete();
     }
-    
+
     public function liked($user)
     {
-        return $this->cancleReaction($user, true);
+        if($this->isLikedBy($user) == true){
+            return $this->cancleReaction();
+        }
+        else{
+            return $this->setReaction($user, true);
+        }
     }
 
     public function disliked($user)
     {
-        return $this->setReaction($user, false);
+        if($this->isDislikedBy($user) == true){
+            return $this->cancleReaction();
+        }
+        else{
+            return $this->setReaction($user, false);
+        }
     }
     
 }
