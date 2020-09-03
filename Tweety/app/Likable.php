@@ -44,15 +44,19 @@ trait Likable
             ]
         );
     }
+
+    public function cancleReaction(){
+        $this->likes()->delete();
+    }
+    
     public function liked($user)
     {
-        return $this->setReaction($user, true);
+        return $this->cancleReaction($user, true);
     }
 
     public function disliked($user)
     {
         return $this->setReaction($user, false);
     }
-    
     
 }
