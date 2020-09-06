@@ -7,7 +7,7 @@
                         alt="{{ $user->username }}'s avatar"
                         width="60"
                         class="mr-4"
-                        style="border-radius:50%"
+                        style="object-fit:cover; border-radius:50%; width:50px; height:50px;"
                     >
                     <div>
                         <h4 class="font-bold">{{ '@' . $user->username }}</h4>

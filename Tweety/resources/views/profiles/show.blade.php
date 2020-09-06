@@ -2,7 +2,7 @@
     <header class="mb-6 relative">
         <div class="relative">
             <img
-            src="/images/header.jpg"
+            src="{{$user->header}}"
             alt=""
             class="mb-4"
             style="
@@ -43,7 +43,7 @@
             </div>
         </div>
         
-        <p class="text-sm mt-6">Let's move on and implement a profile page for each user. This page should show their avatar, a short bio, and then a timeline their tweets. This lesson will give us the chance to flex our Tailwind chops!</p>
+        <p class="text-sm mt-6">{{ $user->bio }}</p>
     </header>
     @include('_timeline')
 </x-app>
