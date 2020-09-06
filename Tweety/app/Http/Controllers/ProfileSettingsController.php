@@ -45,6 +45,7 @@ class ProfileSettingsController extends Controller
         $password = request()->password;
         $password = Hash::make($password);
         $user->update(['password'=> $password]);
+        toastr()->success('Information Updated');
         return redirect($user->path());
     }
 

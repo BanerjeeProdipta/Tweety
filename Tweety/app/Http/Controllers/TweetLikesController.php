@@ -10,14 +10,12 @@ class TweetLikesController extends Controller
     public function like(Tweet $tweet)
     {
         $tweet->liked(auth()->user());
-
         return back();
     }
 
     public function dislike(Tweet $tweet)
     {
         $tweet->disliked(auth()->user());
-
         return back();
     }    
 }

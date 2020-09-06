@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 class FollowsController extends Controller
 {
     public function store(User $user){
-        // Alternative
-        // $this->validate('follow', $user); 
         auth()->user()->toggleFollow($user);
+        toastr()->info('Successful!');
         return back();
     }
 }

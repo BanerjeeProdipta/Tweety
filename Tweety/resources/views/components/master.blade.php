@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
 
     <!-- Fonts -->
@@ -19,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @toastr_css
     
 </head>
 <body>
@@ -45,4 +47,7 @@
     </div>
     <script src="http://unpkg.com/turbolinks"></script> 
 </body>
+@jquery
+@toastr_js
+@toastr_render
 </html>
