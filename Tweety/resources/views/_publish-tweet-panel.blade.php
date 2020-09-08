@@ -7,10 +7,12 @@
             class="w-full"
             placeholder="Post your tweet!"
             required
+            id="textbox" onkeyup="charcountupdate(this.value)"
         ></textarea>
+        <span id= charcount class="text-sm mt-6 text-green-600"></span>
 
         <hr class="my-4">
-
+        <span id= charcount></span>
         <footer class="flex justify-between">
             <img
                 src="{{auth()->user()->avatar}}"
@@ -20,7 +22,7 @@
             >
 
             <button
-                type="submit"
+                type="submit" onclick="return ValidateTweet()"
                 class="bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500"
             >
                 Publish

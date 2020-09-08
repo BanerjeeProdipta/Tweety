@@ -104,7 +104,7 @@
         </div>
 
         <div class="mb-6">
-            <button type="submit"
+            <button type="submit" onclick="return Validate()"
                     class="bg-blue-400 text-white rounded-lg py-2 px-4 hover:bg-blue-500"
             >
                 Submit
