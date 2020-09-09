@@ -21,4 +21,10 @@ class TweetsController extends Controller
         toastr()->info('Tweet Published');
         return redirect('/tweets');
     }
+
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->delete();
+        return redirect('/tweets');
+    }
 }
