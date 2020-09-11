@@ -22,7 +22,7 @@
             >
 
             <button
-                type="submit" onclick="return ValidateTweet()"
+                type="submit"
                 class="bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500"
             >
                 Publish
