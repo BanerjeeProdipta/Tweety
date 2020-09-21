@@ -1,0 +1,1 @@
+$tweets = factory(App\Tweet::class,19)->create()

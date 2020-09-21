@@ -12,7 +12,7 @@ Route::middleware('auth')->group( function() {
     Route::post('/tweets', 'TweetsController@store');
     Route::delete('/tweets/{tweet}', 'TweetsController@destroy')->middleware('can:delete,tweet');;
     Route::post('/tweets/{tweet}/like', 'TweetLikesController@like');
-    Route::delete('/tweets/{tweet}/like', 'TweetLikesController@dislike');
+    Route::post('/tweets/{tweet}/dislike', 'TweetLikesController@dislike');
     Route::post('/profile/{user:username}/follow', 'FollowsController@store');
     Route::get('/profile/{user:username}/edit', 'ProfilesController@edit')->middleware('can:update,user');
     Route::patch('/profile/{user:username}', 'ProfilesController@update')->middleware('can:update,user');

@@ -32,7 +32,7 @@
         </form>
     
         <form method="POST"
-                action="/tweets/{{ $tweet->id }}/like"
+                action="/tweets/{{ $tweet->id }}/dislike"
         >
             @csrf
     
