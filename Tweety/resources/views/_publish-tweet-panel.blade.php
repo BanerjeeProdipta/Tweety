@@ -7,9 +7,11 @@
             class="w-full"
             placeholder="Post your tweet!"
             required
-            id="textbox" onkeyup="charcountupdate(this.value)"
+            id="textbox" 
+            onkeyup="charcountupdate(this.value)"
+            v-model="tweet"
         ></textarea>
-        <span id= charcount class="text-sm mt-6 text-green-600"></span>
+        <span id= charcount class="text-sm mt-6"></span>
 
         <hr class="my-4">
         <span id= charcount></span>
@@ -20,10 +22,10 @@
                 class="mr-2"
                 style="object-fit:cover; border-radius:50%; width:50px; height:50px;"
             >
-
             <button
                 type="submit"
                 class="bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500"
+                :disabled = "tweet.length > 255"
             >
                 Publish
             </button>
