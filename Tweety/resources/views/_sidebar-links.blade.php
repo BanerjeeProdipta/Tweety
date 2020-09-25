@@ -9,7 +9,7 @@
         >Explore</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="#"
+            href="/profile/{{auth()->user()->username}}/notification"
         >Notifications</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
