@@ -20,7 +20,7 @@ class ProfilesController extends Controller
             
             'header' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5000',
             'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5000',
-            'bio' => 'string|max:255'
+            'bio' => 'string|max:255|nullable'
             
         ]);
 

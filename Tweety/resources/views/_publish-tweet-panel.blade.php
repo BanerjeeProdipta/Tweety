@@ -25,6 +25,7 @@
             <button
                 type="submit"
                 class="bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500"
+                :class="tweet.length > 255? 'bg-blue-400 text-white rounded-lg py-1 px-6 cursor-not-allowed': 'bg-blue-400 text-white rounded-lg py-1 px-6 hover:bg-blue-500'"
                 :disabled = "tweet.length > 255"
             >
                 Publish

@@ -6,16 +6,23 @@
         {{$unreadNotifications -> markAsRead()}}
             <li>
                 @if( $notification->type == 'App\Notifications\TweetLike')
-                {{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }} {{$notification->created_at->diffForHumans()}}.
+                    <div  class="bg-blue-200 p-3 rounded m-2 flex justify-between">
+                        <div>{{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }}</div>
+                        <div><p class="text-xs">{{$notification->created_at->diffForHumans()}}.</p></div>
+                    </div>
                 @endif
             </li>
             <li>
                 @if( $notification->type == 'App\Notifications\TweetDislike')
-                {{$notification->data['reacter'] }} {{$notification->data['reaction'] }} on{{$notification->data['tweet'] }} {{$notification->created_at->diffForHumans()}}.
+                    <div  class="bg-blue-200 p-3 rounded m-2 flex justify-between">
+                        <div>{{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }}</div>
+                        <div><p class="text-xs">{{$notification->created_at->diffForHumans()}}.</p></div>
+                    </div>
                 @endif
             </li>
             @empty
-            <li>You have no unread notification at the moment.</li>
+            <li>
+                <div  class="bg-blue-200 p-3 rounded m-2">You have no unread notification at the moment.</div></li>
         @endforelse
     </ul>
     <h5 class="font-bold text-xl mb-4 mt-4">Previous Notifications</h5>
@@ -23,16 +30,22 @@
         @forelse ($readNotifications as $notification)
             <li>
                 @if( $notification->type == 'App\Notifications\TweetLike')
-                {{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }} {{$notification->created_at->diffForHumans()}}.
+                    <div  class="bg-gray-300 p-3 rounded m-2 flex justify-between">
+                        <div>{{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }}</div>
+                        <div><p class="text-xs">{{$notification->created_at->diffForHumans()}}.</p></div>
+                    </div>
                 @endif
             </li>
             <li>
                 @if( $notification->type == 'App\Notifications\TweetDislike')
-                {{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }} {{$notification->created_at->diffForHumans()}}.
-                @endif
+                <div  class="bg-gray-300 p-3 rounded m-2 flex justify-between">
+                    <div>{{$notification->data['reacter'] }} {{$notification->data['reaction'] }} {{$notification->data['tweet'] }}</div>
+                    <div><p class="text-xs">{{$notification->created_at->diffForHumans()}}.</p></div>
+                </div>
+            @endif
             </li>
             @empty
-            <li>You have no notification at the moment.</li>
+            <div  class="bg-gray-300 p-3 rounded m-2">You have no notification at the moment.</div></li>
         @endforelse
     </ul>
 </x-app>
