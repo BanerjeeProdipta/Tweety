@@ -10,7 +10,9 @@
     <li><a
             class="font-bold text-lg mb-4 block"
             href="/profile/{{auth()->user()->username}}/notification"
-        >Notifications</a></li>
+        >
+        Notifications<span class="text-xs font-semibold ml-2 py-1 px-2 uppercase rounded text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1"
+    >{{ auth()->user()->unreadNotifications->count()}}</span></a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="{{ route('profile', auth()->user() ) }} "
