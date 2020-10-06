@@ -45,19 +45,10 @@ class User extends Authenticatable
 
     public function timeline()
     {
-        $friends = $this->follows()->pluck('id');
+        $following = $this->follows()->pluck('id');
 
-        return Tweet::whereIn('user_id', $friends)
+        return Tweet::whereIn('user_id', $following)
             ->orWhere('user_id', $this->id)
-            ->latest()
-            ->withLikes()
-            ->orderByDesc('id')
-            ->paginate(50);
-    }
-
-    public function owntimeline()
-    {
-        return Tweet::where('user_id', $this->id)
             ->latest()
             ->withLikes()
             ->orderByDesc('id')
@@ -77,7 +68,10 @@ class User extends Authenticatable
         return asset($value ? 'storage/'.$value : 'images/header.jpg');    
     }
     
-    public function path(){
-        return route('profile', $this->username);
+    public function path($append = '')
+    {
+        $path = route('profile', $this->username);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 }

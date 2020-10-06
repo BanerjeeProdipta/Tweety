@@ -59,3 +59,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h2>
+Commands to get started with the project!
+
+Make User
+-factory(App\User::class, 20)->create()
+
+10 tweet per user
+-$users = App\User::all();
+-$users = $users->skip(1);
+-$users->each(function ($user) { factory('App\Tweet', 10)->create(['user_id' => $user->id]); });
+
+</h2>

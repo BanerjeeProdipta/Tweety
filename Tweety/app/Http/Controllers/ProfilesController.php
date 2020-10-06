@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 class ProfilesController extends Controller
 {
     public function show(User $user){
-        $tweets = auth()->user()->owntimeline();
-        return view('profiles.show', compact('user', 'tweets'));
+        return view('profiles.show', [
+            'user' => $user,
+            'tweets' => $user
+                ->tweets()
+                ->withLikes()
+                ->paginate(50),
+        ]);
     }
     public function edit(User $user){
         return view('profiles.edit', compact('user'));
