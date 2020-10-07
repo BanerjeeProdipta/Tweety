@@ -14,7 +14,6 @@
         <span id= charcount class="text-sm mt-6"></span>
 
         <hr class="my-4">
-        <span id= charcount></span>
         <footer class="flex justify-between">
             <img
                 src="{{auth()->user()->avatar}}"

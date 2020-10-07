@@ -13,7 +13,6 @@
             class="w-full px-2 mx-2"
             placeholder="Reply to this tweet!"
             required
-            id="textbox" 
             onkeyup="charcountupdate(this.value)"
             v-model="tweet"
         >
@@ -26,6 +25,8 @@
                 Reply
             </button>
         </div>
+        <span id= charcount class="text-sm mt-6"></span>
+
     </form>
 
     @error('body')
