@@ -15,9 +15,11 @@
             <h5 class="font-bold mb-2">{{ $tweet->user->name }}</h5>
         </a>
         <div class="flex justify-between">
-            <p class="text-sm mb-2">
-                {{ $tweet->body }}
-            </p>
+            <a href="">
+                <p class="text-sm mb-2">
+                    {{ $tweet->body }}
+                </p>
+            </a>
             @can('delete', $tweet)
             <form action="tweets/{{$tweet->id}}" method="POST">
                 @csrf
