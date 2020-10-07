@@ -12,6 +12,13 @@ class TweetsController extends Controller
         return view('tweets.index', compact('tweets'));
     }
 
+    public function show(User $user, Tweet $tweet)
+    {   $tweet = Tweet::where('id', $tweet->id)
+                ->withLikes()
+                ->first();;
+        return view('tweets.show', compact('tweet'));
+    }
+
     public function store()
     {
         $validated = request()->validate([

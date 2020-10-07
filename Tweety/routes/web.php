@@ -10,6 +10,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group( function() {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store');
+    Route::get('{user:username}/status/{tweet}', 'TweetsController@show');
     Route::delete('/tweets/{tweet}', 'TweetsController@destroy')->middleware('can:delete,tweet');
     Route::post('/tweets/{tweet}/like', 'TweetLikesController@like');
     Route::post('/tweets/{tweet}/dislike', 'TweetLikesController@dislike');
@@ -20,8 +21,6 @@ Route::middleware('auth')->group( function() {
     Route::get('/explore', 'ExploreController@index')->name('explore');
     Route::get('settings/{user:username}/edit', 'ProfileSettingsController@edit');
     Route::patch('settings/{user:username}', 'ProfileSettingsController@update');
-    Route::get('{user:username}/status/{tweet}', 'TweetsController@show');
-    
 });
 
 Route::get('{user:username}', 'ProfilesController@show')->name('profile');

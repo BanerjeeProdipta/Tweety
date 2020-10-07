@@ -28,6 +28,7 @@
                 <button type="submit"
                         class="text-xs"
                 >
+                {{-- {{dd($tweet)}} --}}
                     {{ $tweet->likes?: 0 }}
                 </button>
             </div>
