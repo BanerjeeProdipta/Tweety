@@ -15,8 +15,9 @@ class TweetsController extends Controller
     public function show(User $user, Tweet $tweet)
     {   $tweet = Tweet::where('id', $tweet->id)
                 ->withLikes()
-                ->first();;
-        return view('tweets.show', compact('tweet'));
+                ->first();
+        $replies = $tweet->replies()->latest()->paginate(10);
+        return view('tweets.show', compact('tweet', 'replies'));
     }
 
     public function store()

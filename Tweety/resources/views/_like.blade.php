@@ -1,8 +1,6 @@
 @auth
     <div class="flex">
-        <form method="POST"
-                action="/tweets/{{ $tweet->id }}/like"
-        >
+        <form method="POST" action="/tweets/{{ $tweet->id }}/like">
             @csrf
     
             <div class="flex items-center mr-4 {{ $tweet->isLikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}">
@@ -28,15 +26,12 @@
                 <button type="submit"
                         class="text-xs"
                 >
-                {{-- {{dd($tweet)}} --}}
                     {{ $tweet->likes?: 0 }}
                 </button>
             </div>
         </form>
     
-        <form method="POST"
-                action="/tweets/{{ $tweet->id }}/dislike"
-        >
+        <form method="POST" action="/tweets/{{ $tweet->id }}/dislike">
             @csrf
     
             <div class="flex items-center {{ $tweet->isDislikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}">

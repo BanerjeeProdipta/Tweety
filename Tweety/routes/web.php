@@ -21,6 +21,7 @@ Route::middleware('auth')->group( function() {
     Route::get('/explore', 'ExploreController@index')->name('explore');
     Route::get('settings/{user:username}/edit', 'ProfileSettingsController@edit');
     Route::patch('settings/{user:username}', 'ProfileSettingsController@update');
+    Route::post('/tweet/{tweet}', 'ReplyController@store');
 });
 
 Route::get('{user:username}', 'ProfilesController@show')->name('profile');

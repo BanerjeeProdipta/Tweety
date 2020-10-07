@@ -1,5 +1,5 @@
-<div class="border border-blue-400 rounded-lg px-2 py-2 mb-8">
-    <form method="POST" action="/tweets">
+<div class="bg-white rounded-lg px-2 py-2">
+    <form method="POST" action="/tweet/{{$tweet->id}}">
         @csrf
         <div class="flex justify-between">
         <img

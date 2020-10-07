@@ -42,6 +42,9 @@ class User extends Authenticatable
     public function tweets(){
         return $this->hasMany(Tweet::class);
     }
+    public function reply(){
+        return $this->hasMany(Reply::class);
+    }
 
     public function timeline()
     {
@@ -52,7 +55,7 @@ class User extends Authenticatable
             ->latest()
             ->withLikes()
             ->orderByDesc('id')
-            ->paginate(50);
+            ->paginate(20);
     }
     
     public function likes()

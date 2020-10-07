@@ -15,3 +15,7 @@
     @endforelse
  
 </div>
+
+<div class="mt-10">
+    {{ $tweets->links('pagination::tailwind') }}
+</div>
