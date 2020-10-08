@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Auth::routes();
 Route::middleware('auth')->group( function() {
     Route::get('/tweets', 'TweetsController@index')->name('home');
     Route::post('/tweets', 'TweetsController@store');
@@ -22,8 +22,7 @@ Route::middleware('auth')->group( function() {
     Route::get('settings/{user:username}/edit', 'ProfileSettingsController@edit');
     Route::patch('settings/{user:username}', 'ProfileSettingsController@update');
     Route::post('/tweet/{tweet}', 'ReplyController@store');
+    Route::delete('/tweet/{tweet}/reply/{reply}', 'ReplyController@destroy');
 });
 
 Route::get('{user:username}', 'ProfilesController@show')->name('profile');
-
-Auth::routes();

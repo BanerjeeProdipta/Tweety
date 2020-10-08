@@ -39,8 +39,9 @@ class ReplyController extends Controller
     }
 
     
-    public function destroy(Reply $reply)
+    public function destroy(Tweet $tweet, Reply $reply)
     {
-        //
+        $reply->delete();
+        return redirect()->back();
     }
 }
