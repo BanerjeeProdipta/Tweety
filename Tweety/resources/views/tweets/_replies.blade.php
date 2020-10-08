@@ -23,6 +23,7 @@
                     <p class="text-sm mb-2">
                         {{ $reply->body }}
                     </p>
+                    @can('delete', $reply)
                     <form action="/tweet/{{$tweet->id}}/reply/{{$reply->id}}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -33,6 +34,7 @@
                             </svg>
                         </button>
                     </form>
+                    @endcan
                 </div>
             </div>
             

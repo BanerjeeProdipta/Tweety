@@ -22,7 +22,7 @@ Route::middleware('auth')->group( function() {
     Route::get('settings/{user:username}/edit', 'ProfileSettingsController@edit');
     Route::patch('settings/{user:username}', 'ProfileSettingsController@update');
     Route::post('/tweet/{tweet}', 'ReplyController@store');
-    Route::delete('/tweet/{tweet}/reply/{reply}', 'ReplyController@destroy');
+    Route::delete('/tweet/{tweet}/reply/{reply}', 'ReplyController@destroy')->middleware('can:delete,reply');
 });
 
 Route::get('{user:username}', 'ProfilesController@show')->name('profile');
