@@ -1,4 +1,4 @@
-<tweet-component inline-template id="tweet" label="tweet" :limit="255">
+<publishtweet-component inline-template id="tweet" label="tweet" :limit="255">
     <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
         <form method="POST" action="/tweets" @submit.prevent="postTweet">
             @csrf
@@ -38,4 +38,4 @@
             </span>
         @enderror
     </div>
-</tweet-component>
+</publishtweet-component>

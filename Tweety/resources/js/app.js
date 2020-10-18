@@ -11,7 +11,7 @@ let instance = Vue.$toast.open('You did it!');
 instance.close();
 Vue.$toast.clear();
 
-Vue.component('tweet-component', require('./components/TweetComponent.vue').default);
+Vue.component('publishtweet-component', require('./components/PublishTweetComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
